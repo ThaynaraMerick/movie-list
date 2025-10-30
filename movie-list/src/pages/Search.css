@@ -1,0 +1,56 @@
+
+
+.search-container {
+    padding: 6rem;
+    text-align: center;
+}
+
+.search-title {
+    font-size: 2.3rem;
+    color: var(--color-secondary);
+    margin-bottom: 2rem; /* Adicionado margem para separar do topo da lista */
+    text-shadow: 2px 2px 8px #000;
+    font-family: 'Creepster', cursive;
+    letter-spacing: 2px;
+}
+
+.search-term-highlight {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.loading-spooky {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    gap: 10px;
+}
+
+.no-results-spooky {
+    margin-top: 5rem;
+    padding: 3rem;
+    background-color: var(--color-card-bg);
+    border: 2px dashed var(--color-border-spooky);
+    border-radius: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-light);
+}
+
+.no-results-spooky p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}

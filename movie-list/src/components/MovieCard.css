@@ -1,0 +1,98 @@
+.movie-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 250px; 
+    margin: 10px;
+}
+
+.movie-card-spooky {
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.movie-card-spooky:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5); 
+}
+
+.card-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-details-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--color-text-light);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.movie-card-spooky:hover .movie-details-overlay {
+    transform: translateY(0);
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-secondary);
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.star-icon {
+    color: gold;
+}
+
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 2px solid var(--color-text-light);
+    color: var(--color-text-light);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    z-index: 50;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--color-primary);
+}
+
+.favorite-btn.favorited {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-secondary);
+}

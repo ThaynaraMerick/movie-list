@@ -1,0 +1,95 @@
+.shared-page {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 3rem 1rem;
+  background: var(--color-bg-dark);
+  min-height: 100vh;
+}
+
+.shared-title {
+    padding: 2rem;
+    font-family: 'Creepster', cursive;
+  font-size: 2.2rem;
+  color: #ffa500;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.shared-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.shared-card {
+  background-color: var(--color-card-bg);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
+}
+
+.shared-card:hover {
+  transform: scale(1.05);
+}
+
+.shared-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.shared-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-secondary);
+}
+
+.back-btn {
+  background-color: #32cd32;
+  color: black;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #39e639;
+}
+
+.empty-favs {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  padding: 3rem;
+  max-width: 500px;
+  margin: 3rem auto;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+.ghost-icon {
+  font-size: 4rem;
+  color: #a020f0;
+  margin-bottom: 1rem;
+}
+
+.empty-favs h2 {
+  color: orange;
+  margin-bottom: 0.5rem;
+}
+
+.empty-favs p {
+  color: var(--color-text-light);
+}

@@ -1,0 +1,86 @@
+
+.spooky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(30, 30, 30, 0.95); 
+    color: var(--color-text-light);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-spooky {
+    font-family: var(--font-spooky);
+    font-size: 1.8rem;
+    color: var(--color-primary); 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.3s;
+}
+
+.logo-spooky:hover {
+    color: var(--color-secondary);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-form {
+    display: flex;
+    gap: 20px;
+    border: 1px solid var(--color-border-spooky);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-form input {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--color-card-bg);
+    color: var(--color-text-light);
+    outline: none;
+}
+
+.search-form button {
+    background-color: var(--color-secondary);
+    border: none;
+    color: var(--color-background-dark);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+    --color-background-dark: #121212;
+    --color-card-bg: #1e1e1e;
+    --color-text-light: #f4f4f4;
+    --color-primary: #8a2be2; 
+    --color-secondary: #ff8c00; 
+    --color-accent: #32cd32; 
+    --color-border-spooky: #444;
+    --font-spooky: 'Creepster', cursive; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+
+    
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    
+    background-image: url('assets/mist-fog.png');  
+    
+    background-repeat: repeat; 
+    background-size: cover; 
+    
+    opacity: 0.25;
+    
+    
+    z-index: -1;
+    animation: fog-movement 50s linear infinite alternate;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+     
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 80px; 
+
+    background-color: transparent;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+@keyframes fog-movement {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 50% 50%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
