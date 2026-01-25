@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFavorites } from "../hooks/useFavorites";
+import { useFavorites } from "../context/FavoritesContext";
 import { TMDB_IMAGE_URL } from "../services/tmdb";
 import { FaHeart, FaShareAlt, FaGhost } from "react-icons/fa";
 import "./Favorites.css";
@@ -9,6 +9,9 @@ const Favorites = () => {
   const [shareLink, setShareLink] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const generateShareLink = async () => {
     if (favorites.length === 0) {
@@ -20,7 +23,8 @@ const Favorites = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/favorites", {
+      
+      const response = await fetch(`${API_URL}/api/favorites`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ movies: favorites }),
@@ -85,15 +89,17 @@ const Favorites = () => {
           {shareLink && (
             <div className="share-box">
               <p>Copie e envie o link:</p>
-              <input type="text" readOnly value={shareLink} />
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(shareLink);
-                  alert("Link copiado para a área de transferência! ✅");
-                }}
-              >
-                Copiar
-              </button>
+              <div className="share-input-group">
+                <input type="text" readOnly value={shareLink} />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(shareLink);
+                    alert("Link copiado para a área de transferência! ✅");
+                  }}
+                >
+                  Copiar
+                </button>
+              </div>
             </div>
           )}
         </>

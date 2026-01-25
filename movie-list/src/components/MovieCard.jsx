@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useFavorites } from "../hooks/useFavorites";
 import { TMDB_IMAGE_URL } from "../services/tmdb";
 import { FaStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import "./MovieCard.css";
+import { useFavorites } from '../context/FavoritesContext';
 
 const MovieCard = ({ movie }) => {
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -18,18 +18,17 @@ const MovieCard = ({ movie }) => {
             className="movie-poster"
           />
 
-          {/* Botão de favorito */}
           <button
             className={`favorite-btn ${favorited ? "favorited" : ""}`}
             onClick={(e) => {
-              e.preventDefault(); // evita abrir a página do filme
+              e.preventDefault(); 
               toggleFavorite(movie);
             }}
           >
             {favorited ? <FaHeart /> : <FaRegHeart />}
           </button>
 
-          {/* Overlay com detalhes */}
+
           <div className="movie-details-overlay">
             <h3 className="movie-title">{movie.title}</h3>
             <div className="movie-rating">

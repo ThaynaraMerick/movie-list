@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieDetails, TMDB_IMAGE_URL } from '../services/tmdb.js';
 import { formatCurrency, formatRuntime } from '../utils/format';
 import { FaDollarSign, FaReceipt, FaClock, FaCalendarAlt, FaGhost, FaStar, FaHeart, FaRegHeart } from 'react-icons/fa'; 
-import { useFavorites } from "../hooks/useFavorites";
+import { useFavorites } from "../context/FavoritesContext";
 
 
 import './Movie.css';
@@ -11,9 +11,7 @@ import './Movie.css';
 const MovieDetails = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
-    const [loading, setLoading] = useState(true);
-    
-   
+    const [loading, setLoading] = useState(true);  
     const { isFavorite, toggleFavorite } = useFavorites();
     const isFav = movie ? isFavorite(movie.id) : false;
 
@@ -57,7 +55,7 @@ const MovieDetails = () => {
 
     return (
         <div className="movie-details-spooky" 
-             style={{ backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.85), var(--color-background-dark)), url(${backdropUrl})` }}>
+            style={{ backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.85), var(--color-background-dark)), url(${backdropUrl})` }}>
             
             <div className="details-card-container">
                 <div className="details-poster">
@@ -99,7 +97,7 @@ const MovieDetails = () => {
                             <strong>Duração:</strong>
                             <span>{formatRuntime(movie.runtime)}</span>
                         </div>
-                         <div className="data-item">
+                        <div className="data-item">
                             <FaCalendarAlt className="data-icon" />
                             <strong>Lançamento:</strong>
                             <span>{movie.release_date}</span>

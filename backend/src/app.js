@@ -10,10 +10,10 @@ connectDB();
 
 const app = express();
 
-// Permite o frontend rodando em http://localhost:5174 acessar a API
+
 app.use(
   cors({
-    origin: "http://localhost:5174",
+    origin: "*", // Permite acesso de qualquer origem (ideal para resolver o erro do Vercel rapidamente)
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
