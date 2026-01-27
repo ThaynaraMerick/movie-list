@@ -13,9 +13,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*", // Permite acesso de qualquer origem (ideal para resolver o erro do Vercel rapidamente)
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
+    credentials: true
   })
 );
 
