@@ -14,12 +14,14 @@ const app = express();
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
-    credentials: true
+    methods: ["GET", "POST", "PUT","DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
+    credentials: true,
+    optionsSuccessStatus: 200
   })
 );
 
+app.options("*", cors());
 app.use(express.json());
 
 app.use("/api/movies", moviesRoutes);
